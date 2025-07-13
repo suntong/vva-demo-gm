@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router';
-import { VbenLayout } from '/@/layouts';
+import { VbenLayout } from '@vben/layouts';
 
 const routes: RouteRecordRaw[] = [
   {

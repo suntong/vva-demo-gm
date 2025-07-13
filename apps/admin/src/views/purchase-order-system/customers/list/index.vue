@@ -21,37 +21,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { VbenTable, useTable } from '/@/components/VbenTable';
+import { VbenTable, useTable, TableAction } from '/@/components/VbenTable';
 import { getCustomerList } from '/@/api/purchase-order-system/customer';
 import { columns } from './data';
 import { useModal } from '/@/components/VbenModal';
 import CustomerForm from './form.vue';
 import { VbenButton } from '/@/components/VbenButton';
-
-const [registerTable] = useTable({
-  api: getCustomerList,
-  columns: columns,
-  bordered: true,
-  showIndexColumn: false,
-  rowKey: 'id',
-  showTableSetting: true,
-  useSearchForm: true,
-  formConfig: {
-    schemas: [
-      {
-        field: 'firstName',
-        label: 'First Name',
-        component: 'Input',
-      },
-      {
-        field: 'lastName',
-        label: 'Last Name',
-        component: 'Input',
-      },
-    ],
-  },
-});
-
 import { deleteCustomer } from '/@/api/purchase-order-system/customer';
 
 const [registerTable, { reload }] = useTable({

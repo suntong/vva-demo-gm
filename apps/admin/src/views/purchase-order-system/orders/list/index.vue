@@ -21,48 +21,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { VbenTable, useTable } from '/@/components/VbenTable';
+import { VbenTable, useTable, TableAction } from '/@/components/VbenTable';
 import { getOrderList } from '/@/api/purchase-order-system/order';
 import { columns } from './data';
 import { useModal } from '/@/components/VbenModal';
 import OrderForm from './form.vue';
 import { VbenButton } from '/@/components/VbenButton';
-
-const [registerTable] = useTable({
-  api: getOrderList,
-  columns: columns,
-  bordered: true,
-  showIndexColumn: false,
-  rowKey: 'id',
-  showTableSetting: true,
-  useSearchForm: true,
-  formConfig: {
-    schemas: [
-      {
-        field: 'status',
-        label: 'Status',
-        component: 'Select',
-        componentProps: {
-          options: [
-            {
-              label: 'Pending',
-              value: 'pending',
-            },
-            {
-              label: 'Shipped',
-              value: 'shipped',
-            },
-            {
-              label: 'Delivered',
-              value: 'delivered',
-            },
-          ],
-        },
-      },
-    ],
-  },
-});
-
 import { deleteOrder } from '/@/api/purchase-order-system/order';
 
 const [registerTable, { reload }] = useTable({
