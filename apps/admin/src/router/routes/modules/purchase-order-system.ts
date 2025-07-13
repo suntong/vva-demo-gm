@@ -15,7 +15,7 @@ const routes: RouteRecordRaw[] = [
         path: 'products',
         name: 'Products',
         component: () =>
-          import('/@/views/purchase-order-system/products/list/index.vue'),
+          import('@/views/purchase-order-system/products/list/index.vue'),
         meta: {
           title: 'Products',
         },
@@ -24,7 +24,7 @@ const routes: RouteRecordRaw[] = [
         path: 'customers',
         name: 'Customers',
         component: () =>
-          import('/@/views/purchase-order-system/customers/list/index.vue'),
+          import('@/views/purchase-order-system/customers/list/index.vue'),
         meta: {
           title: 'Customers',
         },
@@ -33,7 +33,7 @@ const routes: RouteRecordRaw[] = [
         path: 'orders',
         name: 'Orders',
         component: () =>
-          import('/@/views/purchase-order-system/orders/list/index.vue'),
+          import('@/views/purchase-order-system/orders/list/index.vue'),
         meta: {
           title: 'Orders',
         },
