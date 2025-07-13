@@ -376,6 +376,59 @@ export const MOCK_MENU_LIST = [
     name: 'About',
     path: '/about',
   },
+  {
+    id: 11,
+    meta: {
+      order: 100,
+      title: 'Purchase Order System',
+      icon: 'carbon:shopping-cart',
+    },
+    status: 1,
+    type: 'catalog',
+    name: 'PurchaseOrderSystem',
+    path: '/purchase-order-system',
+    children: [
+      {
+        id: 1101,
+        pid: 11,
+        path: '/purchase-order-system/products',
+        name: 'Products',
+        status: 1,
+        type: 'menu',
+        meta: {
+          icon: 'carbon:box',
+          title: 'Product Catalog',
+        },
+        component: '/purchase-order-system/products/list',
+      },
+      {
+        id: 1102,
+        pid: 11,
+        path: '/purchase-order-system/customers',
+        name: 'Customers',
+        status: 1,
+        type: 'menu',
+        meta: {
+          icon: 'carbon:user',
+          title: 'Customers',
+        },
+        component: '/purchase-order-system/customers/list',
+      },
+      {
+        id: 1103,
+        pid: 11,
+        path: '/purchase-order-system/orders',
+        name: 'Orders',
+        status: 1,
+        type: 'menu',
+        meta: {
+          icon: 'carbon:document',
+          title: 'Purchase Orders',
+        },
+        component: '/purchase-order-system/orders/list',
+      },
+    ],
+  },
 ];
 
 export function getMenuIds(menus: any[]) {
