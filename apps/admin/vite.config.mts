@@ -2,6 +2,8 @@ import { defineConfig } from '@vben/vite-config';
 
 import ElementPlus from 'unplugin-element-plus/vite';
 
+import { resolve } from 'node:path';
+
 export default defineConfig(async () => {
   return {
     application: {},
@@ -11,6 +13,11 @@ export default defineConfig(async () => {
           format: 'esm',
         }),
       ],
+      resolve: {
+        alias: {
+          '@': resolve(__dirname, 'src'),
+        },
+      },
       server: {
         proxy: {
           '/api': {
