@@ -1,9 +1,27 @@
-import { defHttp } from '/@/utils/http/axios';
+import { request } from '/@/utils/request';
 
-enum Api {
-  OrderList = '/orders/list',
+export function getOrderList() {
+  return request.get({
+    url: '/orders',
+  });
 }
 
-export function getOrderList(params) {
-  return defHttp.get({ url: Api.OrderList, params });
+export function addOrder(data) {
+  return request.post({
+    url: '/orders',
+    data,
+  });
+}
+
+export function deleteOrder(id) {
+  return request.delete({
+    url: `/orders/${id}`,
+  });
+}
+
+export function updateOrder(id, data) {
+  return request.put({
+    url: `/orders/${id}`,
+    data,
+  });
 }

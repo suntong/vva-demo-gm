@@ -1,9 +1,27 @@
-import { defHttp } from '/@/utils/http/axios';
+import { request } from '/@/utils/request';
 
-enum Api {
-  CustomerList = '/customers/list',
+export function getCustomerList() {
+  return request.get({
+    url: '/customers',
+  });
 }
 
-export function getCustomerList(params) {
-  return defHttp.get({ url: Api.CustomerList, params });
+export function addCustomer(data) {
+  return request.post({
+    url: '/customers',
+    data,
+  });
+}
+
+export function deleteCustomer(id) {
+  return request.delete({
+    url: `/customers/${id}`,
+  });
+}
+
+export function updateCustomer(id, data) {
+  return request.put({
+    url: `/customers/${id}`,
+    data,
+  });
 }

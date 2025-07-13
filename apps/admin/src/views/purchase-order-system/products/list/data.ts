@@ -1,4 +1,4 @@
-import { VbenTableColumn } from '/@/components/VbenTable';
+import type { VbenTableColumn } from '/@/components/VbenTable';
 
 export const columns: VbenTableColumn[] = [
   {
@@ -16,5 +16,9 @@ export const columns: VbenTableColumn[] = [
   {
     field: 'inStock',
     label: 'In Stock',
+  },
+  {
+    field: 'description',
+    label: 'Description',
   },
 ];

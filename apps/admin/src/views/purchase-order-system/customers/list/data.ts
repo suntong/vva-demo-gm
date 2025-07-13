@@ -1,4 +1,4 @@
-import { VbenTableColumn } from '/@/components/VbenTable';
+import type { VbenTableColumn } from '/@/components/VbenTable';
 
 export const columns: VbenTableColumn[] = [
   {
